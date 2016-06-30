@@ -1,16 +1,19 @@
-# Freedonia Hello World (freedonia.fd)
-This System Security Plan provides an overview of the security requirements for
-the Freedonia Hello World (freedonia.fd) system
-and describes the controls in place or planned for implementation to provide a level of security appropriate for the information to be transmitted, processed or stored by the system.  Information security is vital to our critical infrastructure and its effective performance and protection is a key component of our national security program.  Proper management of information technology systems is essential to ensure the confidentiality, integrity and availability of the data transmitted, processed or stored by the
-Freedonia.fd information system.  
+# Freedonia compliance
 
-The security safeguards implemented for the
-Freedonai.fd system
+This System Security Plan provides an overview of the security requirements for
+the Freedonia Compliance (freedonia-compliance)
+and describes the controls in place or planned for implementation to provide a level of security appropriate for the information to be transmitted, processed or stored by the system.  Information security is vital to our critical infrastructure and its effective performance and protection is a key component of our national security program.  Proper management of information technology systems is essential to ensure the confidentiality, integrity and availability of the data transmitted, processed or stored by the
+
+
+Freedonia Compliance information system.  
+
+The security safeguards implemented for
+Freedonia Compliance
 meet the policy and control requirements set forth in this System Security Plan.  All systems are subject to monitoring consistent with applicable laws, regulations, agency policies, procedures and practices.  
 
 Unique Identifier | Information System Name | Information System Abbreviation
 ----------------- | ----------------------- | ---
-Freedonia.fd | Freedonia Hello World | Freedonia.fd
+freedonia-compliance | Freedonia Compliance | fd-comp
 
 
 # Security Objectives Categorization (FIPS 199)
@@ -30,11 +33,15 @@ X    |    |
 
 Using this categorization, in conjunction with the risk assessment and any unique security requirements, we have established the security controls for this system, as detailed in this SSP.
 
-# Remaining information copied from https://github.com/18f/cg-compliance...
 
 ## Information Types
 
-The following tables identify the information types that are input, stored, processed, and/or output from Cloud.Gov. The selection of information types is based on guidance provided by OMB Federal Enterprise Architecture Program Management Office Business Reference Model 2.0, and FIPS Pub 199, Standards for Security Categorization of Federal Information and Information Systems which is based on NIST SP 800-60, Guide for Mapping Types of Information and Information Systems to Security Categories.
+
+The following tables identify the information types that are input, stored, processed, and/or output from
+Freedonia Compliance.
+The selection of information types is based on guidance provided by OMB Federal Enterprise Architecture Program Management Office Business Reference Model 2.0, and FIPS Pub 199, Standards for Security Categorization of Federal Information and Information Systems which is based on NIST SP 800-60, Guide for Mapping Types of Information and Information Systems to Security Categories.
+
+TKTK: The following table needs updating for Freedonia Compliance, currently showing Cloud.gov specs:
 
 |Information Type | Confidentiality   | Integrity | Availability|
 |-----------------|-------------------|-----------|-------------|
@@ -54,6 +61,8 @@ Yes | No  | E-Authentication Question
 
 Note: Refer to OMB Memo M-04-04 E-Authentication Guidance for Federal Agencies for more information on e-Authentication.
 
+TKTK: The above table is inherited from Cloud.gov
+
 The summary E-Authentication Level is recorded in the table that follows.
 
 ### E-Authentication Determination
@@ -61,10 +70,12 @@ The summary E-Authentication Level is recorded in the table that follows.
 |-----------|
 |Cloud.Gov Platform as a Service| 18F/GSA| Level 2| Feb 18, 2016|
 
+TKTK: The above table is inherited from Cloud.gov
+
 ## Information System Owner
 Name | Title | Organization | Address | Phone Number | Email Address
 --- | --- | --- | --- | --- | ---
-Noah Kunin | 18F Infrastructure Director | 18F/GSA | 1800 F Street, NW Washington DC 20405 | 202-577-7167 | noah.kunin [at] gsa.gov
+Peter Burkholder | Freedonia President-for-Life | GovReady | Address | 202-555-1212 | 1800 J Street NW, Washington, DC 20001 | pburkholder [at] govready.com
 
 ## Authorizing Official
 Name | Title | Organization | Address | Phone Number | Email Address
@@ -74,47 +85,25 @@ Aaron Snow | Authorizing Official | 18F/GSA | 1800 F Street, NW Washington DC 20
 ## Other Designated Contacts
 Name | Title | Organization | Address | Phone Number | Email Address
 ---  | ---   | ---          | ---     | ---          | ---
-Diego Lapiduz  | Innovation Specialist |18F/GSA| 1800 F Street, NW Washington DC 20405| 415-730-5945| diego.lapiduz [at] gsa.gov  
-Bret Mogilefsky| Program Manager |18F/GSA| 1800 F Street, NW Washington DC 20405| 510-610-1956|bret.mogilefsky [at] gsa.gov
 
 ## Assignment of Security Responsibility
 Name | Title | Organization | Address | Phone Number | Email Address
 ----|----|----|----|----|----
-Curtis Lovett| Information System Security Officer| 18F/GSA |1800 F Street DC 20405 | 202-412-0337 | curtis.lovett [at] gsa.gov
-Rajat Varuni | Information System Security Officer| 18F/GSA |1800 F Street DC 20405 | 202-746-3201 | rajat.ravindervaruni [at] gsa.gov  
-Noah Kunin| 18F Infrastructure Director|18F/GSA| 1800 F Street DC 20405| 202-577-7167| noah.kunin [at] gsa.gov
 
 ## Information System Operational Status
-The system is currently in the life-cycle phase noted in the table that follows.  (Only operational systems can be granted an ATO).
+The system is currently in the life-cycle phase noted in the table that follows.  (**Only operational systems can be granted an ATO**).
+
+TKTK: Is a live system that is in alpha considered Operational or UnderDevelopment?
 
 ## System Status
 Operational | Under Development | Major Modification | Other
---- | --- | --- | ---
-X |  |  |
+------ | ------ | ------ | ---
+&nbsp; |   X    | &nbsp; | &nbsp;
 
 ## Information System Type
 
-The Cloud.Gov makes use of unique managed service provider architecture layer(s).
+(this space currently blank)
 
-## Cloud Service Models
-Information systems, particularly those based on cloud architecture models, are made up of different service layers.  The layers of the Cloud .Gov defined in this SSP are indicated in the table that follows.
-
-X |Platform as a Service (PaaS) | Application
--|-|-
-  |Software as a Service (SaaS) | Application
-  |Infrastructure as a service (IaaS)| General Support System
-  |Other| Explain:
-
-
-## Cloud Deployment Models
-
-Information systems, particularly those based on cloud services and infrastructures, are made up of different deployment models.  The deployment models of the Cloud.Gov that are defined in this SSP, and are not leveraged by any other Provisional Authorizations, are indicated in the table that follows.
-
-X |**Public** | Cloud services and infrastructure supporting multiple organizations and agency clients|
--|-|-
-|Private| Cloud services and infrastructure dedicated to a specific organization/agency and not other clients
-|Community| Cloud services and infrastructure shared by several organizations/agencies with the same policy and compliance considerations
-|Hybrid| Explain: (e.g., cloud services and infrastructure that provides private cloud for secured applications and data where required and public cloud for other applications and data)
 
 ## Leveraged Authorizations
 
@@ -123,3 +112,5 @@ The Cloud.Gov information system plans to leverage a pre-existing Provisional Au
 Information System Name | Service Provider Owner | Date Granted
 --- | --- | ---
 AWS FedRamp Agency ATO (issued by the HHS) | Amazon |	May 13, 2013
+
+TKTK Clarify how the above applies to a generic implementation on a public cloud.
