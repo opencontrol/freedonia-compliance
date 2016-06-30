@@ -1,3 +1,4 @@
+CM := ${HOME}/go/src/github.com/opencontrol/compliance-masonry/compliance-masonry
 
 default:
 	echo "no default action"
@@ -8,8 +9,14 @@ clean:
 pdf: exports
 	cd exports && gitbook pdf ./ ./compliance.pdf
 
-exports: opencontrols
-	compliance-masonry docs gitbook FredRAMP-low
+serve: exports
+	cd exports && gitbook serve
 
-opencontrols: opencontrol.yaml
-	compliance-masonry get
+exports: opencontrols
+	${CM} docs gitbook FredRAMP-low
+
+opencontrols: opencontrol.yaml */component.yaml certifications/*yaml standards/*yaml markdowns/*/*md markdowns/*md 
+	${CM} get
+
+coverage:
+	${CM} diff FredRAMP-low

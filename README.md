@@ -44,19 +44,31 @@ The minimum initial tree we need for a standalone SSP is:
 
 The 1.1.1 release of `compliance-masonry` requires at least one-component to run, hence the nearly empty `AU_policy`
 
-Generate and server initial SSP
+Generate and serve initial SSP
 ============
 
+These steps assume you already have (for a \*nix type operating system):
+- `compliance-masonry` (and go prerequiste) installed per notes at https://github.com/opencontrol/compliance-masonry
+- `node-js` installed for local viewing at https://localhost:4000 OR
+- `calibre` installed for PDF generation
+
+Clone this repo, then `cd` into `freedonia-compliance`.  Then run:
 
 ```
-git checkout step1
 compliance-masonry get
 compliance-masonry docs gitbook FredRAMP-low
 cd exports && gitbook serve
+# or
+cd exports && ./ ./compliance.pdf
 ```
 
-PDF:
+
+Please open issues at the [ATO1Day
+Project](https://github.com/pburkholder/ato1day-compliance/issues), instead of
+here
+
+
+PDF prerequiste on OsX with Homebrew:
 ```
 brew cask install calibre
-make PDF
 ```
