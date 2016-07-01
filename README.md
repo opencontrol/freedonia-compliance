@@ -38,6 +38,7 @@ and like this on a page for particular control:
 
 > ![detailpage](./assets/detailpage.png)
 
+A complete generated PDF is [included here](./assets/example.pdf)
 
 The minimum initial tree we need for a standalone SSP is:
 
