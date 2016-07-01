@@ -9,3 +9,4 @@ tests/security-group-test-app/Godeps/_workspace/
 .cache/
 schemas/
 opencontrols
+.DS_Store

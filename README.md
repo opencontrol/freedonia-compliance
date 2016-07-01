@@ -78,8 +78,8 @@ Clone this repo, then `cd` into `freedonia-compliance`.  Then run:
 compliance-masonry get
 compliance-masonry docs gitbook FredRAMP-low
 cd exports && gitbook serve
-# or
-cd exports && ./ ./compliance.pdf
+# or generate the PDF `exports/compliance.pdf`:
+cd exports && gitbook pdf ./ ./compliance.pdf 
 ```
 
 Feedback

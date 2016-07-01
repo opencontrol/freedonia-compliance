@@ -1,10 +1,18 @@
-CM := ${HOME}/go/src/github.com/opencontrol/compliance-masonry/compliance-masonry
+# This makefile provides some shortcuts to generating update documents
+# based on any changes in the input files. Typical usage to make a
+# PDF complete from all sources:
+#    `make clean pdf`
+# or likewise for serving the content:
+#    `make clean serve`
+#
+# FIXME: Add rules so generated files are compared instead of their directories
 
-default:
-	echo "no default action"
+CM := compliance-masonry
+
+default: pdf
 
 clean:
-	rm -rf exports/ _book/ opencontrols/
+	rm -rf exports/ opencontrols/
 
 pdf: exports
 	cd exports && gitbook pdf ./ ./compliance.pdf
@@ -15,7 +23,7 @@ serve: exports
 exports: opencontrols
 	${CM} docs gitbook FredRAMP-low
 
-opencontrols: opencontrol.yaml */component.yaml certifications/*yaml standards/*yaml markdowns/*/*md markdowns/*md 
+opencontrols: opencontrol.yaml */component.yaml certifications/*yaml standards/*yaml markdowns/*/*md markdowns/*md
 	${CM} get
 
 coverage:
