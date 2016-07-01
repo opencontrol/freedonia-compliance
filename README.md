@@ -32,11 +32,11 @@ Expected SSP Documentation for the ATO
 
 To obtain the Authority to Operate (ATO) we'll need an SSP (System Security Plan), and we use the tooling the from [OpenControl](https://github.com/opencontrol) to do so. With the tooling we can generate PDF documents, and a website that looks like this on the front page:
 
-![frontpage](./assets/frontpage.png)
+> ![frontpage](./assets/frontpage.png)
 
 and like this on a page for particular control:
 
-![detailpage](./assets/detailpage.png)
+> ![detailpage](./assets/detailpage.png)
 
 
 The minimum initial tree we need for a standalone SSP is:
@@ -65,7 +65,6 @@ The minimum initial tree we need for a standalone SSP is:
 Building and updating the SSP
 -----------------------------
 
-
 These steps assume you already have (for a \*nix type operating system):
 - `compliance-masonry` (and go prerequistes) installed per notes at https://github.com/opencontrol/compliance-masonry
   - As of 1 July 2016, testing is with version 1.1.1
@@ -83,15 +82,8 @@ cd exports && gitbook serve
 cd exports && ./ ./compliance.pdf
 ```
 
-
 Feedback
 --------
 
 Please open issues at the [ATO1Day
-Project](https://github.com/pburkholder/ato1day-compliance/issues), instead of
-here
-
-
-PDF prerequiste on OsX with Homebrew:
-```
-```
+Project](https://github.com/pburkholder/ato1day-compliance/issues), instead of within this repository.
