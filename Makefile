@@ -7,7 +7,14 @@
 #
 # FIXME: Add rules so generated files are compared instead of their directories
 
-CM := compliance-masonry
+CM = compliance-masonry
+GB = gitbook
+
+# GNU Make trick from
+#   http://stackoverflow.com/questions/5618615/check-if-a-program-exists-from-a-makefile
+EXECUTABLES = $(CM) $(GB)
+K := $(foreach exec,$(EXECUTABLES),\
+        $(if $(shell which $(exec)),some string,$(error "No $(exec) in PATH")))
 
 default: pdf
 

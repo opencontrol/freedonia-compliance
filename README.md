@@ -79,7 +79,15 @@ compliance-masonry get
 compliance-masonry docs gitbook FredRAMP-low
 cd exports && gitbook serve
 # or generate the PDF `exports/compliance.pdf`:
-cd exports && gitbook pdf ./ ./compliance.pdf 
+cd exports && gitbook pdf ./ ./compliance.pdf
+```
+
+The steps above are included in the project's `Makefile` so you can reliably run, say:
+
+```
+make clean pdf
+# or
+make clean serve
 ```
 
 Feedback

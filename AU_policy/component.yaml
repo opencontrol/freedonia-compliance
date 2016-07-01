@@ -1,13 +1,15 @@
 documentation_complete: false
-name: AU_policy
+name: Audit Policy
 references:
 - name: AU Policy
-  path: https://remoteurl.com/path.html
-  type: URL
+  path: https://github.com/pburkholder/freedonia-compliance/blob/master/AU_policy/README.md
 satisfies:
 - control_key: AU-1
   covered_by: []
   implementation_status: none
-  narrative: "Here is a narrative"
+  narrative:
+    - text: |
+        This text describes how our organization is meeting the requirements for the
+        Audit policy, and also references a more complete description at ./AU_policy/README.md
   standard_key: FRIST-800-53
-schema_version: 2.0
+schema_version: 3.0.0
