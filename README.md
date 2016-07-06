@@ -10,13 +10,20 @@ For this exercise, we'll take the role of IT staff for the Republic of Freedonia
 
 Freedonia has a national information security policy for use of cloud providers, FredRAMP, that has been inspired by FedRAMP but with far fewer elements to their standards and certifications.
 
-The starting point are the standards from the Freedonia Institute of Standards, FRIST-800-53, which are identical to NIST-800-53 but only have
+The starting point are the standards from the Freedonia Institute of Standards, FRIST-800-53, which are identical to NIST-800-53 but only have the following _technical controls_ (implemented as infrastructure or system code) and _organizational controls_ (implemented as personnel policies and practices)
 
-* AU-1 - AUDIT AND ACCOUNTABILITY POLICY AND PROCEDURES: organizational control on audit policy
-* AU-2 - AUDIT EVENTS: technical control at the node level (send logs to SumoLogic), set at organizational level
+* System documentation
+  * See `./markdowns`
+* AU-1 - AUDIT AND ACCOUNTABILITY POLICY AND PROCEDURES: an organizational control on audit policy
+  * See `opencontrol.yaml` line TKTK (ref: https://github.com/pburkholder/ato1day-compliance/issues/14)
+* AU-2 - AUDIT EVENTS: technical control at the node level (send logs to SumoLogic or Papertrail), set at organizational level
+  * See `papertrail/component.yaml`, (ref: https://github.com/pburkholder/ato1day-compliance/issues/17)
 * PE-2 - PHYSICAL ACCESS AUTHORIZATIONS: by dint of Provisional-ATO/inheritance
+  * AWS has a P-ATO with PE-2 taken care of, need to reference that (ref: https://github.com/pburkholder/ato1day-compliance/issues/18)
 * SC-1 - SYSTEM AND COMMUNICATIONS PROTECTION POLICY AND PROCEDURES: organizational control consumed as a system component, AWS,
+  * See `opencontrol.yaml` line TKTK (ref: https://github.com/pburkholder/ato1day-compliance/issues/15)
 * SC-7 - BOUNDARY PROTECTION: technical control technical control consumed as a system component (no 0.0.0.0 access in AWS)
+  * See `opencontrol.yaml` line TKTK (ref: https://github.com/pburkholder/ato1day-compliance/issues/15)
 * XX-1 - MOCK/DUMMY CONTROL: this is only here to demonstrate that a control in standard does not have to referenced in a certification.
 
 The certification FredRAMP-low requires all the above controls except for XX-1
