@@ -26,7 +26,7 @@ The starting point are the standards from the Freedonia Institute of Standards, 
   * See `opencontrol.yaml` line TKTK (ref: https://github.com/pburkholder/ato1day-compliance/issues/15)
 * XX-1 - MOCK/DUMMY CONTROL: this is only here to demonstrate that a control in standard does not have to referenced in a certification.
 
-The certification FredRAMP-low requires all the above controls except for XX-1
+The certification FredRAMP-low requires all the above controls except for XX-1. These standards and certifications will all be housed at https://github.com/pburkholder/freedonia-frist (ref: https://github.com/pburkholder/ato1day-compliance/issues/16)
 
 The system we're building is the 'Hello world' website for Freedonia, which will comprise:
 - Two Amazon Web Service Virtual Private Clouds (AWS VPCs),

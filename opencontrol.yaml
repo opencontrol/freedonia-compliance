@@ -6,16 +6,11 @@ metadata:
     - pburkholder@pobox.com
 components:
   - ./AU_policy
-standards:
-  - ./standards/FRIST-800-53.yaml
-certifications:
-  - ./certifications/FredRAMP-low.yaml
 
-# No remote dependencies for the initial POC
-# dependencies:
-#  standards:
-#    - url: https://github.com/opencontrol/NIST-800-53-Standards
-#      revision: master
-#  certifications:
-#    - url: https://github.com/opencontrol/FedRAMP-Certifications
-#      revision: master
+dependencies:
+  standards:
+    - url: https://github.com/pburkholder/freedonia-frist/
+      revision: master
+  certifications:
+    - url: https://github.com/pburkholder/freedonia-frist/
+      revision: master
