@@ -1,38 +1,55 @@
-Welcome to Freedonia
-====================
+Welcome to Freedonia Compliance: Beginner Exercise for OpenControl
+===================================================================
 
-This project uses a stripped down version of the U.S. federal security standards to exemplify the workflow and tooling for continuous compliance.
+This project repository demonstrates a simple System Security Plan generated using [OpenControl](http://opencontrol.xyz) model to automate cyber security compliance paperwork.
 
-Scenario:
+
+Audience
+---------
+
+Anyone trying to get started with OpenControl, including:
+
+* FISMA newbies that don't want to write big word documents
+* FISMA experts that need a more efficent way of doing paper work
+* FISMA enforcers that need to trust the OpenControl model and tools we're presenting
+
+
+Scenario
 --------
 
 For this exercise, we'll take the role of IT staff for the Republic of Freedonia.
 
-Freedonia has a national information security policy for use of cloud providers, FredRAMP, that has been inspired by FedRAMP but with far fewer elements to their standards and certifications.
+Freedonia thinks America is just awesome and has modeled their program for certifying security of major Information Systems after America's `FedRAMP` program and called it `FRedRAMP`.
 
-The starting point are the standards from the Freedonia Institute of Standards, FRIST-800-53, which are identical to NIST-800-53 but only have the following _technical controls_ (implemented as infrastructure or system code) and _organizational controls_ (implemented as personnel policies and practices)
+The starting point for `FRedRAMP` certifications are the security controls listed in the `FRIST 800-53`, which are identical to America's `NIST 800-53` except for fewer controls.
 
-* System documentation
-  * See `./markdowns`
-* AU-1 - AUDIT AND ACCOUNTABILITY POLICY AND PROCEDURES: an organizational control on audit policy
-  * See `opencontrol.yaml` line TKTK (ref: https://github.com/pburkholder/ato1day-compliance/issues/14)
-* AU-2 - AUDIT EVENTS: technical control at the node level (send logs to SumoLogic or Papertrail), set at organizational level
-  * See `papertrail/component.yaml`, (ref: https://github.com/pburkholder/ato1day-compliance/issues/17)
-* PE-2 - PHYSICAL ACCESS AUTHORIZATIONS: by dint of Provisional-ATO/inheritance
-  * AWS has a P-ATO with PE-2 taken care of, need to reference that (ref: https://github.com/pburkholder/ato1day-compliance/issues/18)
-* SC-1 - SYSTEM AND COMMUNICATIONS PROTECTION POLICY AND PROCEDURES: organizational control consumed as a system component, AWS,
-  * See `opencontrol.yaml` line TKTK (ref: https://github.com/pburkholder/ato1day-compliance/issues/15)
-* SC-7 - BOUNDARY PROTECTION: technical control technical control consumed as a system component (no 0.0.0.0 access in AWS)
-  * See `opencontrol.yaml` line TKTK (ref: https://github.com/pburkholder/ato1day-compliance/issues/15)
-* XX-1 - MOCK/DUMMY CONTROL: this is only here to demonstrate that a control in standard does not have to referenced in a certification.
+### The Controls
 
-The certification FredRAMP-low requires all the above controls except for XX-1. These standards and certifications will all be housed at https://github.com/pburkholder/freedonia-frist (ref: https://github.com/pburkholder/ato1day-compliance/issues/16)
+Freedonia's `FRIST 800-53` has only 6 security controls:
 
-The system we're building is the 'Hello world' website for Freedonia, which will comprise:
-- Two Amazon Web Service Virtual Private Clouds (AWS VPCs),
+| ID         | Title          | Type |
+| ---------- | -------------- | --------| 
+| AU-1 | AUDIT AND ACCOUNTABILITY POLICY AND PROCEDURES | organizational control on audit policy |
+| AU-2 | AUDIT EVENTS | technical control at the node level | 
+| PE-2 | PHYSICAL ACCESS AUTHORIZATIONS | organization control on who accesses data center |
+| SC-1 | SYSTEM AND COMMUNICATIONS PROTECTION POLICY AND PROCEDURES | organizational control on how components communicate securely |
+| SC-7 | BOUNDARY PROTECTION | technical control defending boundary of entire system |
+| XX-1 | MOCK/DUMMY CONTROL | here to demonstrate that a control in standard does not have to referenced in a certification |
+
+### The Certification
+
+The certification of `FRedRAMP-Low` requires all the above controls except for XX-1. 
+
+The standards and certifications are housed in a repository for easier re-use at [https://github.com/pburkholder/freedonia-frist](https://github.com/pburkholder/freedonia-frist).
+
+### The Information System
+
+The system we're building is the 'Hello World' website for Freedonia, which will comprise:
+
+* Two Amazon Web Service Virtual Private Clouds (AWS VPCs),
 one each for development and production
-- In each VPC, one node with `nginx` web server and the static content for a website
-- A release process for this code, and some infrastructure for logging traffic
+* In each VPC, one node with `NGINX` web server and the static content for the website
+* Infrastructure for logging traffic
 
 Expected SSP Documentation for the ATO
 --------------------------------------
