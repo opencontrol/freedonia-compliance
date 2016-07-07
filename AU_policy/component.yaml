@@ -12,7 +12,7 @@ satisfies:
         This text describes how our organization is meeting the requirements for the
         Audit policy, and also references a more complete description at ./AU_policy/README.md
 
-        Since the AU-1 `control` is document and disseminate a policy on Audit and Accountability, then
+        Since the AU-1 `control` is to document and disseminate a policy on Audit and Accountability, then
         this narrative suffices to provide that control. A verification step could be something
         that checks that the referenced policy is no more than 365 days old.
   standard_key: FRIST-800-53
