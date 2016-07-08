@@ -6,6 +6,7 @@ metadata:
     - pburkholder@pobox.com
 components:
   - ./AU_policy
+  - ./Logging
 
 dependencies:
   standards:
@@ -14,3 +15,6 @@ dependencies:
   certifications:
     - url: https://github.com/pburkholder/freedonia-frist/
       revision: master
+  systems:
+    - url: https://github.com/pburkholder/freedonia-aws-compliance/
+      revision: w_compliance
