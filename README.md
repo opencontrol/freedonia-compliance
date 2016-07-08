@@ -3,7 +3,7 @@ Welcome to Freedonia Compliance: Beginner Exercise for OpenControl
 
 This project repository demonstrates a simple `System Security Plan` generated using the [OpenControl](http://opencontrol.xyz) framework to automate security compliance paperwork.
 
-We created this demonstration because wanted a simple starter example for ourselves and others. We found the existing mid-2016 OpenControl documentation and examples from 18F somewhat hard to reason about because of the specificity to their use case for Cloud.gov.
+We created this demonstration because to be a simple starter example for ourselves and others. We found the existing mid-2016 OpenControl documentation and examples from Pivotal and 18F very specific to the use case of Cloud.gov.
 
 Audience
 ---------
@@ -122,6 +122,32 @@ The minimum initial files and file tree structure we need to generate a standalo
 
 It just so happens you can get these files and file tree structure by cloning this repository!
 
+#### The opencontrol.yaml Config File
+
+Notice one file in particular, the `opencontrol.yaml` file in the root directory of the tree. The `opencontrol.yaml` file is key to using OpenControl.
+
+OpenControl uses a config file called `opencontrol.yaml` following the popular configuration file pattern we see with so many tools today. Every OpenControl repository will have at least one `opencontrol.yaml` file providing critical informatoin and, importantly, information about dependencies on other other OpenControl YAML files and repos.
+
+Here's what the `opencontrol.yaml` file for our Freedonia project looks like:
+
+```
+schema_version: "1.0.0"
+name: freedonia.fd
+metadata:
+  description: hello_world
+  maintainers:
+    - pburkholder@pobox.com
+components:
+  - ./AU_policy
+
+dependencies:
+  standards:
+    - url: https://github.com/pburkholder/freedonia-frist/
+      revision: master
+  certifications:
+    - url: https://github.com/pburkholder/freedonia-frist/
+      revision: master
+```
 
 Building and Updating the SSP Yourself
 --------------------------------------
@@ -133,11 +159,15 @@ compliance-masonry get
 compliance-masonry docs gitbook `FredRAMP-low`
 ```
 
-At this point, you have generated a series of new `YAML` files representing your `SSP` inside of the `export` directory that has artfully combined data from the all other OpenControl `YAML` files.
+The `compliance-masonry get` command reads the `opencontrol.yaml` file and retrieves all the dependencies, even from other OpenControl repositories!
 
-Our next step is to turn the `YAML` files representing our SSP into something even more human readable.
+The `compliance-masonry docs gitbook `FredRAMP-low` command generates a document of the components and standards matching the `FRedRAMP-Low` certification that is expressed in the `gitbook` format.
 
-To make a PDF version at :
+At this point, you have generated content for your `SSP` inside of the `export` directory that has artfully combined data from the all other OpenControl `YAML` files into a `gitbook`!
+
+Our next step is to publish/deploy our `gitbook` content representing our SSP for shared human access.
+
+To make a PDF version:
 
 ```
 cd exports && gitbook pdf ./ ./compliance.pdf
@@ -164,8 +194,20 @@ make clean serve
 Review
 -------
 
-We
+We've generated a very simple `System Security Plan` from a bunch of re-usable `YAML` files and Markdown content in a computer-controlled pipeline style instead of a manually created word documents.
 
+There are big benefits to this approach:
+
+1. Our `SSP` is now managed like our codebase; anytime we update our code we can also update our `SSP` and publish a new one with a single click
+2. Our `SSP` is more structured and more machine-readable, so we can do other processing
+3. We can document compliance of re-usable components ONCE and re-use the documentation, too
+
+Next Steps
+----------
+
+OK. So we got a document. But how do we do include actual verification of the controls in the document? We've started another repo (still in progress) to show building a system and documentation together--and deploying both. Visit [freedonia-aws-compliance](https://github.com/pburkholder/freedonia-aws-compliance) for that.
+
+You could use this repo as a kind of stub file for your own compliance documentation. Just change the `opencontrol.yaml` file and the content in the repo.
 
 
 Feedback
