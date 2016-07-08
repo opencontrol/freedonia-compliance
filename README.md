@@ -7,7 +7,7 @@ This project repository demonstrates a simple `System Security Plan` generated u
 Audience
 ---------
 
-Anyone trying to get started with [OpenControl](http://opencontrol.xyz) or [Compliance-Masonry[(https://github.com/opencontrol/compliance-masonry), including:
+Anyone trying to get started with [OpenControl](http://opencontrol.xyz) or [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry), including:
 
 * FISMA newbies that don't want to write big word documents
 * FISMA experts that need a more efficent way of doing paper work
