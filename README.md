@@ -156,7 +156,7 @@ Clone this repo, then `cd` into `freedonia-compliance`.  Then run:
 
 ```
 compliance-masonry get
-compliance-masonry docs gitbook `FredRAMP-low`
+compliance-masonry docs gitbook FredRAMP-low
 ```
 
 The `compliance-masonry get` command reads the `opencontrol.yaml` file and retrieves all the dependencies, even from other OpenControl repositories!
