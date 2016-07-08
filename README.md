@@ -19,7 +19,7 @@ Scenario
 
 For this exercise, we'll take the role of IT staff for the Republic of Freedonia.
 
-Freedonia thinks America is just awesome! Freedonia and has modeled their `FRedRAMP` program for certifying security of major Information Systems after America's `FedRAMP` program.
+Freedonia thinks America is just awesome! Freedonia has modeled their `FRedRAMP` program for certifying security of major Information Systems after America's `FedRAMP` for program certifying cloud service providers. (If it's good enough for the cloud...)
 
 The starting point for `FRedRAMP` certifications is the `FRIST 800-53`, which is identical to America's `NIST 800-53` except with less security controls. A lot less.
 
@@ -54,22 +54,21 @@ one each for development and production
 Desired Outcome: A Manged System Security Plan 
 ------------------------------------------------
 
-To obtain the `Authority to Operate`, or `(ATO)`, we'll need an `System Security Plan`, or `(SSP)`.
+To obtain the `Authority to Operate`, or `ATO`, we'll need an `System Security Plan`, or `SSP`.
 
-In the past, all `SSP` were 400 page Word Docs that were re-written for each System, even if many of the controls referred to the same system. But that incredibly slow process cannot keep up with our improved DevOps practices and our high velocity Continuous Integration and Delivery pipeline.
+The typical `SSP` is a 400 page Word Document re-written for each System, even when many of the controls refer to the same components used by many systems. Creating Word Documents manually cannot keep up with our improved DevOps practices and our high velocity Continuous Integration and Delivery pipeline.
 
-So instead, we want to manage our `SSP` using the tooling from OpenControl to do so. 
+So instead, we want to manage our `SSP` using the tooling from OpenControl to manage, generate, and deploy (e.g., publish) our paperwork like we manage, generate, and deploy our applications. 
 
-With the tooling, all of our details about system components, standards, and certifications are kept as `YAML` files and versioned as needed.  Using the [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry) SSP-assembler written in GO, we can combine OpenControl `YAML` files from multiple repositories into PDF document or HTML files.
+With the OpenControl tooling, all of our details about system components, standards, and certifications are kept as `YAML` files and versioned as needed.  Using the [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry) SSP-assembler written in GO, we can combine OpenControl `YAML` files from multiple repositories into PDF document or HTML files.
 
 ### The System Security Plan as PDF
 
 At the end of this excercise, we can generate a PDF version of our SSP with a single command. It will look like this:
 
-(screenshot here)
+> ![PDF screenshoot](./assets/pdffirstpage.png)
 
 A complete generated PDF is [included here](./assets/example.pdf)
-
 
 ### The System Security Plan as HTML
 
