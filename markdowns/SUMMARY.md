@@ -2,9 +2,7 @@
 
 This summary is the table of contents for material not automatically generated from OpenControls:
 
-* [About the SSP](system_documentation/about-the-ssp.md) This is your executive summary
-* [System Classification](system_documentation/system-data.md) This is really exciting
-* [General System Description](system_documentation/system-description.md) It'll make you laugh, make you cry.
+* [About the SSP](docs/about-the-ssp.md) This is your executive summary
 
 ----
 
