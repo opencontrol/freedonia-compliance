@@ -3,6 +3,7 @@ Welcome to Freedonia Compliance: Beginner Exercise for OpenControl
 
 This project repository demonstrates a simple `System Security Plan` generated using the [OpenControl](http://opencontrol.xyz) framework to automate security compliance paperwork.
 
+We created this demonstration because wanted a simple starter example for ourselves and others. We found the existing mid-2016 OpenControl documentation and examples from 18F somewhat hard to reason about because of the specificity to their use case for Cloud.gov.
 
 Audience
 ---------
@@ -68,11 +69,11 @@ At the end of this excercise, we can generate a PDF version of our SSP with a si
 
 > ![PDF screenshoot](./assets/pdffirstpage.png)
 
-A complete generated PDF is [included here](./assets/example.pdf)
+A complete generated PDF is [included here](./assets/example.pdf).
 
 ### The System Security Plan as HTML
 
-Alternatively--maybe even preferably--we can also generate our SSP as a website that looks like this on the front page:
+Alternatively--maybe even preferably--we can also generate our `SSP` as a website that looks like this on the front page:
 
 > ![frontpage](./assets/frontpage.png)
 
@@ -86,7 +87,7 @@ Requirements to Use OpenControl
 These steps assume you already have:
 
 * a \*nix type operating system
-* Go installed
+* `Go` installed
 * `Compliance-Masonry` v 1.1.1 installed per notes at https://github.com/opencontrol/compliance-masonry
 * `calibre` installed for PDF generation
 	* For OS X with Homebrew installed, try `brew cask install calibre`
@@ -98,7 +99,7 @@ NOTE: The 1.1.1 release of `compliance-masonry` requires at least one-component 
 Minimal File Structure for an OpenControl-based SSP
 ----------------------------------------------------
 
-The minimum initial files and file tree structure we need to generate a standalone SSP is:
+The minimum initial files and file tree structure we need to generate a standalone `SSP` is:
 
 ```
 .
@@ -119,15 +120,17 @@ The minimum initial files and file tree structure we need to generate a standalo
     └── FRIST-800-53.yaml     # the security control standards list by family and name
 ```
 
+It just so happens you can get these files and file tree structure by cloning this repository!
 
-Building and updating the SSP
------------------------------
+
+Building and Updating the SSP Yourself
+--------------------------------------
 
 Clone this repo, then `cd` into `freedonia-compliance`.  Then run:
 
 ```
 compliance-masonry get
-compliance-masonry docs gitbook `FRedRAMP-Low`
+compliance-masonry docs gitbook `FredRAMP-low`
 ```
 
 At this point, you have generated a series of new `YAML` files representing your `SSP` inside of the `export` directory that has artfully combined data from the all other OpenControl `YAML` files.
@@ -157,6 +160,13 @@ make clean pdf
 # or
 make clean serve
 ```
+
+Review
+-------
+
+We
+
+
 
 Feedback
 --------
