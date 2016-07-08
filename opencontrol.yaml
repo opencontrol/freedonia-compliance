@@ -6,8 +6,6 @@ metadata:
     - pburkholder@pobox.com
 components:
   - ./AU_policy
-  - ./Logging
-
 dependencies:
   standards:
     - url: https://github.com/pburkholder/freedonia-frist/
