@@ -30,7 +30,7 @@ serve: exports
 exports: opencontrols
 	${CM} docs gitbook FredRAMP-low
 
-opencontrols: opencontrol.yaml */component.yaml certifications/*yaml standards/*yaml markdowns/*/*md markdowns/*md
+opencontrols: opencontrol.yaml */component.yaml markdowns/*/*md markdowns/*md
 	${CM} get
 
 coverage:
