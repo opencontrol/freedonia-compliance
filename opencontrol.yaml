@@ -15,4 +15,4 @@ dependencies:
       revision: master
   systems:
     - url: https://github.com/pburkholder/freedonia-aws-compliance/
-      revision: w_compliance
+      revision: master

@@ -1,10 +1,32 @@
 ## About the System Security Plan  
 
-Lorem ipsum dolor sit amet, te populo denique vim. Ut nam ludus habemus, ne scripta consetetur vel, ad eum vocent expetendis. Sed ut diceret noluisse dissentiet, iriure fabulas pertinacia mea an. Cibo homero ubique at eum, vix nihil deleniti an. Pri omnesque consequat ex, ea mei quas labore moderatius.
+The typical USA FedRAMP system security plan (SSP)
+is written from a 304-page Microsoft document. See here:
+https://www.fedramp.gov/resources/templates-2016
 
-## Who should use this document?
+The first 12 sections are a narrative that is independent of the
+structure of the controls that OpenControl specifies with `component.yaml` files. The table of contents for the initial 12
+sections is like this:
 
-In meis impedit offendit vel. Ut utinam soleat usu, porro homero integre ad vel. Legimus efficiantur has ad, velit homero recusabo sea ne, lobortis inimicus recteque eam te. No elit iudicabit imperdiet usu, ut quando voluptatibus ius, legendos corrumpit ius in. Cum vocent gloriatur ex, erat eruditi eu pri.
+```
+1	Information System Name/Title	1
+2	Information System Categorization	1
+3	Information System Owner	5
+4	Authorizing Official	5
+5	Other Designated Contacts	6
+6	Assignment of Security Responsibility	7
+7	Information System Operational Status	7
+8	Information System Type	8
+9	General System Description	10
+10	System Environment	13
+11	System Interconnections	16
+12	Laws, Regulations, Standards, and Guidance	17
+```
+
+The content here could form the above 12-part narrative,
+but doesn't. For a complete example, see:
+
+https://github.com/18F/cg-compliance/tree/master/markdowns
 
 ## How are images included?
 
