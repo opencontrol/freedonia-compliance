@@ -64,7 +64,7 @@ The typical `SSP` is a 400 page Word Document re-written for each System, even w
 
 So instead, we want to manage our `SSP` using the tooling from OpenControl to manage, generate, and deploy (e.g., publish) our paperwork like we manage, generate, and deploy our applications.
 
-With the OpenControl tooling, all of our details about system components, standards, and certifications are kept as [YAML])http://www.yaml.org/start.html) files and versioned as needed.  Using the [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry) SSP-assembler written in GO, we can combine OpenControl `YAML` files from multiple repositories into PDF document or HTML files.
+With the OpenControl tooling, all of our details about system components, standards, and certifications are kept as [YAML](http://www.yaml.org/start.html) files and versioned as needed.  Using the [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry) SSP-assembler written in GO, we can combine OpenControl `YAML` files from multiple repositories into PDF document or HTML files.
 
 ### The System Security Plan as PDF
 
