@@ -1,4 +1,4 @@
-Welcome to Freedonia Compliance: Beginner Exercise for OpenControl
+Beginner Exercise for OpenControl: Welcome to Freedonia Compliance
 ===================================================================
 
 This project repository demonstrates a simple `System Security Plan` generated using the [OpenControl](http://opencontrol.xyz) framework to automate security compliance paperwork.
