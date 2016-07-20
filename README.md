@@ -42,7 +42,7 @@ Freedonia's `FRIST 800-53` has only 6 security controls:
 
 The certification of `FRedRAMP-Low` requires all the above controls except for XX-1.
 
-The standards and certifications are housed in a repository for easier re-use at [https://github.com/pburkholder/freedonia-frist](https://github.com/pburkholder/freedonia-frist).
+The standards and certifications are housed in a repository for easier re-use at [https://github.com/opencontrol/freedonia-frist](https://github.com/opencontrol/freedonia-frist).
 
 ### The Information System
 
@@ -141,15 +141,15 @@ components:
   - ./AU_policy
 dependencies:
   standards:
-    - url: https://github.com/pburkholder/freedonia-frist/
+    - url: https://github.com/opencontrol/freedonia-frist/
       revision: master
   certifications:
-    - url: https://github.com/pburkholder/freedonia-frist/
+    - url: https://github.com/opencontrol/freedonia-frist/
       revision: master
 # We re-use the Freedonia AWS component, so consume
 # the system's compliance info as a remote `systems` description
 	systems:
-	  - url: https://github.com/pburkholder/freedonia-aws-compliance/
+	  - url: https://github.com/opencontrol/freedonia-aws-compliance/
 	    revision: master
 ```
 
@@ -209,7 +209,7 @@ There are big benefits to this approach:
 Next Steps
 ----------
 
-OK. So we got a document. But how do we do include actual verification of the controls in the document? We've started another repo (still in progress) to show building a system and documentation together--and deploying both. Visit [freedonia-aws-compliance](https://github.com/pburkholder/freedonia-aws-compliance) for that.
+OK. So we got a document. But how do we do include actual verification of the controls in the document? We've started another repo (still in progress) to show building a system and documentation together--and deploying both. Visit [freedonia-aws-compliance](https://github.com/opencontrol/freedonia-aws-compliance) for that.
 
 You could use this repo as a kind of stub file for your own compliance documentation. Just change the `opencontrol.yaml` file and the content in the repo.
 
@@ -218,4 +218,4 @@ Feedback
 --------
 
 Please open issues at the [ATO1Day
-Project](https://github.com/pburkholder/ato1day-compliance/issues), instead of within this repository.
+Project](https://github.com/opencontrol/ato1day-compliance/issues), instead of within this repository.
