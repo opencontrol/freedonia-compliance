@@ -18,6 +18,6 @@ This SSP is intended to demonstrate the _process_, not the _content_ for an SSP 
 
 We have yet to implement a strategy to version this document with a creation date and relevants tags.
 
-The source documents are under source-code control with Git and GitHub at the following URL: https://github.com/pburkholder/freedonia-compliance
+The source documents are under source-code control with Git and GitHub at the following URL: https://github.com/opencontrol/freedonia-compliance
 
-If there are errors or corrections, please submit them to https://github.com/pburkholder/ato1day-compliance/issues.
+If there are errors or corrections, please submit them to https://github.com/opencontrol/ato1day-compliance/issues.

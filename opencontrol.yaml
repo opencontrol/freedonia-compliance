@@ -8,11 +8,11 @@ components:
   - ./AU_policy
 dependencies:
   standards:
-    - url: https://github.com/pburkholder/freedonia-frist/
+    - url: https://github.com/opencontrol/freedonia-frist/
       revision: master
   certifications:
-    - url: https://github.com/pburkholder/freedonia-frist/
+    - url: https://github.com/opencontrol/freedonia-frist/
       revision: master
   systems:
-    - url: https://github.com/pburkholder/freedonia-aws-compliance/
+    - url: https://github.com/opencontrol/freedonia-aws-compliance/
       revision: master

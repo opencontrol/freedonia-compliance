@@ -3,7 +3,7 @@ name: Audit Policy
 schema_version: 3.0.0
 references:
 - name: AU Policy
-  path: https://github.com/pburkholder/freedonia-policies/wiki/Audit-Policy
+  path: https://github.com/opencontrol/freedonia-policies/wiki/Audit-Policy
 satisfies:
 - control_key: AU-1
   standard_key: FRIST-800-53
