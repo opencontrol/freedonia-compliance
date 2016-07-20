@@ -1,14 +1,14 @@
 Beginner Exercise for OpenControl: Welcome to Freedonia Compliance
 ===================================================================
 
-This project repository demonstrates a simple `System Security Plan` generated using the [OpenControl](http://opencontrol.xyz) framework to automate security compliance paperwork.
+This project repository demonstrates a simple `System Security Plan` generated using the [OpenControl](http://open-control.org/) framework to automate security compliance paperwork.
 
 We created this demonstration as a simple starter example for ourselves and others. We found the existing mid-2016 OpenControl documentation and examples from Pivotal and 18F very specific to the use case of Cloud.gov.
 
 Audience
 ---------
 
-Anyone trying to get started with [OpenControl](http://opencontrol.xyz) or [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry), including:
+Anyone trying to get started with [OpenControl](http://open-control.org/) or [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry), including:
 
 * FISMA newbies that don't want to write big word documents
 * FISMA experts that need a more efficent way of doing paper work
