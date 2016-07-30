@@ -8,7 +8,7 @@ satisfies:
 - control_key: AU-1
   standard_key: FRIST-800-53
   covered_by: []
-  implementation_status: complete
+  implementation_status: implemented
   narrative:
     - text: |
         This text describes how our organization is meeting the requirements for the
