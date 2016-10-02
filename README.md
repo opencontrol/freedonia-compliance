@@ -183,7 +183,7 @@ To make a HTML web site version:
 
 ```
 cd exports && gitbook serve
-# visit your HTML SSP at https://localhost:4000
+# visit your HTML SSP at http://localhost:4000
 
 ```
 
