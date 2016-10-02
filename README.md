@@ -167,7 +167,7 @@ The `compliance-masonry get` command reads the `opencontrol.yaml` file and retri
 
 The `compliance-masonry docs gitbook FredRAMP-low` command generates a document of the components and standards matching the `FRedRAMP-Low` certification that is expressed in the `gitbook` format.
 
-At this point, you have generated content for your `SSP` inside of the `export` directory that has artfully combined data from the all other OpenControl `YAML` files into a `gitbook`!
+At this point, you have generated content for your `SSP` inside of the `exports` directory that has artfully combined data from the all other OpenControl `YAML` files into a `gitbook`!
 
 Our next step is to publish/deploy our `gitbook` content representing our SSP for shared human access.
 
