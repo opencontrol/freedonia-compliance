@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+name: freedonia.fd
+metadata:
+  description: hello_world
+  maintainers:
+    - pburkholder@pobox.com
+components:
+  - ./AU_policy
+dependencies:
+  standards:
+    - url: https://github.com/opencontrol/freedonia-frist/
+      revision: master
+  certifications:
+    - url: https://github.com/opencontrol/freedonia-frist/
+      revision: master
+  systems:
+    - url: https://github.com/opencontrol/freedonia-aws-compliance/
+      revision: master

@@ -1,0 +1,54 @@
+documentation_complete: false
+name: Security Awareness Training Policy for 81Fr
+schema_version: 3.0.0
+references:
+- name: AT Policy
+  path: https://github.com/opencontrol/freedonia-policies/wiki/Audit-Policy_NEEDTOUPDATE
+satisfies:
+- control_key: AT-3
+  standard_key: FRIST-800-53
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: The 81Fr Program office reviews AT-2
+- control_key: AT-1
+  covered_by:
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        The 81Fr Program Office develops, documents, and disseminates to all 81Fr staff
+        The 81Fr Security Awareness policy which addresses purpose, scope, roles,
+        responsibilities, management commitment, coordination among organizational
+        entities, and compliance and procedures to facilitate the implementation of the
+        security awareness access and training policy and associated security awareness
+        controls. The 81Fr accecss control policy is listed within its private Github
+        repository that is accessible to all 81Fr staff.
+    - key: b
+      text: |
+        The 81Fr Program Office will review and update the current 81Fr Security Awareness
+        and training control policy at least every 3 years and any documented access
+        procedures at least annually.
+  standard_key: FRIST-800-53
+- control_key: AT-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: The 81Fr Program office reviews AT-2
+  standard_key: FRIST-800-53
+- control_key: AT-2 (2)
+  covered_by:
+  implementation_status: none
+  narrative:
+    - text: The 81Fr Program office reviews AT-2
+  standard_key: FRIST-800-53
+- control_key: AT-4
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        Completed the development of the Awareness training policy specifically
+        for 81Fr program. ISSO support is looking into possible solutions for specific
+        security awareness training for 81Fr staff. currently reviewing the SEI training
+        programs for Secure DevOps and Online line Learning management system.
+  standard_key: FRIST-800-53
