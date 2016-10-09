@@ -1,0 +1,16 @@
+schema_version: "1.0.0"
+name: freedonia.fd
+metadata:
+  description: hello_world
+  maintainers:
+    - pburkholder@pobox.com
+components:
+  - ./AU_policy
+standards:
+  - ./lesson_2/standards/FRIST-800-53.yaml
+certifications:
+  - ./lesson_2/certifications/FredRAMP-low.yaml
+dependencies:
+  systems:
+    - url: https://github.com/opencontrol/freedonia-aws-compliance/
+      revision: master
