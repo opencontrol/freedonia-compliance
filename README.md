@@ -166,7 +166,11 @@ The `compliance-masonry docs gitbook FredRAMP-low` command generates a document 
 
 At this point, you have generated content for your `SSP` inside of the `exports` directory that has artfully combined data from the all other OpenControl `YAML` files into a `gitbook`!
 
-Our next step is to publish/deploy our `gitbook` content representing our SSP for shared human access.
+Our next step is to publish/deploy our `gitbook` content representing our SSP for shared human access. First, install [GitBook](https://github.com/GitbookIO/gitbook-cli#readme):
+
+```shell
+npm install -g gitbook-cli
+```
 
 To make a PDF version:
 
