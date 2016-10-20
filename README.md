@@ -127,7 +127,7 @@ OpenControl uses a config file called `opencontrol.yaml` following the popular c
 
 Here's what the `opencontrol.yaml` file for our Freedonia project looks like:
 
-```
+```yaml
 schema_version: "1.0.0"
 name: freedonia.fd
 metadata:
@@ -143,11 +143,11 @@ dependencies:
   certifications:
     - url: https://github.com/opencontrol/freedonia-frist/
       revision: master
-# We re-use the Freedonia AWS component, so consume
-# the system's compliance info as a remote `systems` description
-	systems:
-	  - url: https://github.com/opencontrol/freedonia-aws-compliance/
-	    revision: master
+  # We re-use the Freedonia AWS component, so consume
+  # the system's compliance info as a remote `systems` description
+  systems:
+    - url: https://github.com/opencontrol/freedonia-aws-compliance/
+      revision: master
 ```
 
 Building and Updating the SSP Yourself
@@ -155,7 +155,7 @@ Building and Updating the SSP Yourself
 
 Clone this repo, then `cd` into `freedonia-compliance`.  Then run:
 
-```
+```shell
 compliance-masonry get
 compliance-masonry docs gitbook FredRAMP-low
 ```
@@ -170,23 +170,21 @@ Our next step is to publish/deploy our `gitbook` content representing our SSP fo
 
 To make a PDF version:
 
-```
+```shell
 cd exports && gitbook pdf ./ ./compliance.pdf
 # creates the PDF at `exports/compliance.pdf`
-
 ```
 
 To make a HTML web site version:
 
-```
+```shell
 cd exports && gitbook serve
 # visit your HTML SSP at http://localhost:4000
-
 ```
 
 The steps above are included in the project's `Makefile` so you can reliably run, say:
 
-```
+```shell
 make clean pdf
 # or
 make clean serve
