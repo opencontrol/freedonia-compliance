@@ -90,13 +90,10 @@ Requirements to Use OpenControl
 These steps assume you already have:
 
 * a \*nix type operating system
-* `Go` installed
-* `Compliance-Masonry` v 1.1.1 installed per notes at https://github.com/opencontrol/compliance-masonry
+* [Compliance Masonry installed](https://github.com/opencontrol/compliance-masonry#installation)
 * `calibre` installed for PDF generation
-	* For OS X with Homebrew installed, try `brew cask install calibre`
+    * For OS X with Homebrew installed, try `brew cask install calibre`
 * `node-js` installed for local viewing at https://localhost:4000
-
-NOTE: The 1.1.1 release of `compliance-masonry` requires at least one-component to run
 
 
 Minimal File Structure for an OpenControl-based SSP
@@ -130,7 +127,7 @@ OpenControl uses a config file called `opencontrol.yaml` following the popular c
 
 Here's what the `opencontrol.yaml` file for our Freedonia project looks like:
 
-```
+```yaml
 schema_version: "1.0.0"
 name: freedonia.fd
 metadata:
@@ -146,11 +143,11 @@ dependencies:
   certifications:
     - url: https://github.com/opencontrol/freedonia-frist/
       revision: master
-# We re-use the Freedonia AWS component, so consume
-# the system's compliance info as a remote `systems` description
-	systems:
-	  - url: https://github.com/opencontrol/freedonia-aws-compliance/
-	    revision: master
+  # We re-use the Freedonia AWS component, so consume
+  # the system's compliance info as a remote `systems` description
+  systems:
+    - url: https://github.com/opencontrol/freedonia-aws-compliance/
+      revision: master
 ```
 
 Building and Updating the SSP Yourself
@@ -158,7 +155,7 @@ Building and Updating the SSP Yourself
 
 Clone this repo, then `cd` into `freedonia-compliance`.  Then run:
 
-```
+```shell
 compliance-masonry get
 compliance-masonry docs gitbook FredRAMP-low
 ```
@@ -169,27 +166,29 @@ The `compliance-masonry docs gitbook FredRAMP-low` command generates a document 
 
 At this point, you have generated content for your `SSP` inside of the `exports` directory that has artfully combined data from the all other OpenControl `YAML` files into a `gitbook`!
 
-Our next step is to publish/deploy our `gitbook` content representing our SSP for shared human access.
+Our next step is to publish/deploy our `gitbook` content representing our SSP for shared human access. First, install [GitBook](https://github.com/GitbookIO/gitbook-cli#readme):
+
+```shell
+npm install -g gitbook-cli
+```
 
 To make a PDF version:
 
-```
+```shell
 cd exports && gitbook pdf ./ ./compliance.pdf
 # creates the PDF at `exports/compliance.pdf`
-
 ```
 
 To make a HTML web site version:
 
-```
+```shell
 cd exports && gitbook serve
 # visit your HTML SSP at http://localhost:4000
-
 ```
 
 The steps above are included in the project's `Makefile` so you can reliably run, say:
 
-```
+```shell
 make clean pdf
 # or
 make clean serve
