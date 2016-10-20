@@ -90,13 +90,10 @@ Requirements to Use OpenControl
 These steps assume you already have:
 
 * a \*nix type operating system
-* `Go` installed
-* `Compliance-Masonry` v 1.1.1 installed per notes at https://github.com/opencontrol/compliance-masonry
+* [Compliance Masonry installed](https://github.com/opencontrol/compliance-masonry#installation)
 * `calibre` installed for PDF generation
-	* For OS X with Homebrew installed, try `brew cask install calibre`
+    * For OS X with Homebrew installed, try `brew cask install calibre`
 * `node-js` installed for local viewing at https://localhost:4000
-
-NOTE: The 1.1.1 release of `compliance-masonry` requires at least one-component to run
 
 
 Minimal File Structure for an OpenControl-based SSP
