@@ -1,0 +1,51 @@
+documentation_complete: false
+name: AWS Implementation
+schema_version: 3.0.0
+references:
+- name: SC Policy
+  path: https://github.com/opencontrol/freedonia-aws-compliance/wiki/Security-Controls
+  type: URL
+satisfies:
+- control_key: AU-2
+  standard_key: FRIST-800-53
+  covered_by: []
+  implementation_status: none
+  narrative:
+   - text: |
+        AU-2 - Audit Events
+        All AWS events are sent to AWS CloudWatch.
+        This is implemented with our Terraform build using the
+        `aws_cloudtrail` resource (https://www.terraform.io/docs/providers/aws/r/cloudtrail.html)
+
+        A verification step can be done by confirming the existence
+        of the Cloudwatch bucket etc. with InSpec.
+- control_key: SC-1
+  standard_key: FRIST-800-53
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        SC-1 - System and Communications Protection Policy and Procedures
+        This text describes how our organization is meeting the requirements for the
+        Security Controls policy, and also references a more complete description at
+        the referenced document at
+        https://github.com/opencontrol/freedonia-aws-compliance/wiki/Security-Controls
+
+
+        Since the SC-1 `control` is to document and disseminate a policy on
+        Security Controls
+        this narrative suffices to provide that control. A verification step could be something
+        that checks that the referenced policy is no more than 365 days old.
+- control_key: SC-7
+  standard_key: FRIST-800-53
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        SC-7 - Boundary protection
+
+        Boundary protection is provided, in AWS, with Security Groups that do not allow
+        ingress except to port 443 on the ELBs
+
+        Verification: No security groups allow 0.0.0.0 inbound except ones named 'elb.*' can
+        allowed port 443 to 0.0.0.0 (testing with InspecAws)

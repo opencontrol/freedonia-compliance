@@ -1,29 +1,25 @@
 Beginner Exercise for OpenControl: Welcome to Freedonia Compliance
 ===================================================================
 
-This project repository demonstrates a simple `System Security Plan` generated using the [OpenControl](http://open-control.org/) framework to automate security compliance paperwork.
+_Updated and tested in February 2019!_
 
-We created this demonstration as a simple starter example for ourselves and others. We found the existing mid-2016 OpenControl documentation and examples from Pivotal and 18F very specific to the use case of Cloud.gov.
+This project repository demonstrates a simple `System Security Plan` generated using the [OpenControl](http://open-control.org/) framework to automate security compliance paperwork.
 
 Audience
 ---------
 
-Anyone trying to get started with [OpenControl](http://open-control.org/) or [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry), including:
+Anyone trying to get started with [OpenControl](http://open-control.org/), [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry), and [hyperGRC](https://github.com/GovReady/hyperGRC):
 
 * FISMA newbies that don't want to write big word documents
 * FISMA experts that need a more efficent way of doing paper work
 * FISMA enforcers that need to trust the OpenControl model and tools we're presenting
 
-
-
 Scenario
 --------
 
-For this exercise, we'll take the role of IT staff for the Republic of Freedonia.
+Freedonia modeled their `FRedRAMP` program for cyber security certification of major Information Systems after America's `FedRAMP` program for certifying cloud service providers.
 
-Freedonia thinks America is just awesome! Freedonia has modeled their `FRedRAMP` program for certifying security of major Information Systems after America's `FedRAMP` for program certifying cloud service providers. (If it's good enough for the cloud...)
-
-The starting point for `FRedRAMP` certifications is the `FRIST 800-53`, which is identical to America's `NIST 800-53` except with fewer security controls. A lot fewer.
+The starting point for `FRedRAMP` certifications is the `FRIST 800-53`, which is like America's `NIST 800-53` except with fewer security controls.
 
 ### The Controls
 
@@ -42,7 +38,7 @@ Freedonia's `FRIST 800-53` has only 6 security controls:
 
 The certification of `FRedRAMP-Low` requires all the above controls except for XX-1.
 
-The standards and certifications are housed in a repository for easier re-use at [https://github.com/opencontrol/freedonia-frist](https://github.com/opencontrol/freedonia-frist).
+The standards and certifications are included in this repository, but also housed in a separate repository for easier re-use at [https://github.com/opencontrol/freedonia-frist](https://github.com/opencontrol/freedonia-frist).
 
 ### The Information System
 
@@ -54,36 +50,6 @@ one each for development and production
 * Infrastructure for logging traffic
 
 \[Note: This system is still fictitious, but could be built if it helps Masonry users understand the process\]
-
-Desired Outcome: A Managed System Security Plan
-------------------------------------------------
-
-To obtain the `Authority to Operate`, or `ATO`, we'll need an `System Security Plan`, or `SSP`.
-
-The typical `SSP` is a 400 page Word Document re-written for each System, even when many of the controls refer to the same components used by many systems. Creating Word Documents manually cannot keep up with our improved DevOps practices and our high velocity Continuous Integration and Delivery pipeline.
-
-So instead, we want to manage our `SSP` using the tooling from OpenControl to manage, generate, and deploy (e.g., publish) our paperwork like we manage, generate, and deploy our applications.
-
-With the OpenControl tooling, all of our details about system components, standards, and certifications are kept as [YAML](http://www.yaml.org/start.html) files and versioned as needed.  Using the [Compliance-Masonry](https://github.com/opencontrol/compliance-masonry) SSP-assembler written in GO, we can combine OpenControl `YAML` files from multiple repositories into PDF document or HTML files.
-
-### The System Security Plan as PDF
-
-At the end of this excercise, we can generate a PDF version of our SSP with a single command. It will look like this:
-
-> ![PDF screenshoot](./assets/pdffirstpage.png)
-
-A complete generated PDF is [included here](./assets/example.pdf).
-
-### The System Security Plan as HTML
-
-Alternatively--maybe even preferably--we can also generate our `SSP` as a website that looks like this on the front page:
-
-> ![frontpage](./assets/frontpage.png)
-
-and like this on a page for particular control:
-
-> ![detailpage](./assets/detailpage.png)
-
 
 Requirements to Use OpenControl
 --------------------------------
@@ -99,13 +65,19 @@ These steps assume you already have:
 Minimal File Structure for an OpenControl-based SSP
 ----------------------------------------------------
 
-The minimum initial files and file tree structure we need to generate a standalone `SSP` is:
+Here's the tree structure of our repository:
 
 ```
 .
 ├── README.md   # the file you're reading now
-├── AU_policy
-│   └── component.yaml        # a local description of the Audit policy (AU)
+├── components
+│   ├── AU_policy
+│   │   └── component.yaml        # a local description of the Audit policy (AU)
+│   ├── AWS_core
+│   │   └── component.yaml        # a local description of the "AWS core" component
+│   └── AWS_implementation
+│       └── component.yaml        # a local description of the "AWS implementation" component
+│
 ├── markdowns         
 │   ├── README.md             # the introduction to the entire SSP
 │   ├── SUMMARY.md            # a table of contents for narrative documents of the SSP
@@ -131,27 +103,21 @@ Here's what the `opencontrol.yaml` file for our Freedonia project looks like:
 schema_version: "1.0.0"
 name: freedonia.fd
 metadata:
-  description: hello_world
+  description: Simple example of OpenControl Compliance-as-Code
   maintainers:
-    - pburkholder@pobox.com
+    - greg.elin@govready.com
 components:
-  - ./AU_policy
-dependencies:
-  standards:
-    - url: https://github.com/opencontrol/freedonia-frist/
-      revision: master
-  certifications:
-    - url: https://github.com/opencontrol/freedonia-frist/
-      revision: master
-  # We re-use the Freedonia AWS component, so consume
-  # the system's compliance info as a remote `systems` description
-  systems:
-    - url: https://github.com/opencontrol/freedonia-aws-compliance/
-      revision: master
+  - ./components/AU_policy
+  - ./components/AWS_core
+  - ./components/AWS_implementation
+standards:
+  - ./standards/FRIST-800-53.yaml
+certifications:
+  - ./certifications/FredRAMP-low.yaml
 ```
 
-Building and Updating the SSP Yourself
---------------------------------------
+Using Compliance-Masonry Quickstart to Build your SSP from Structured Data
+--------------------------------------------------------------------------
 
 Clone this repo, then `cd` into `freedonia-compliance`.  Then run:
 
@@ -179,12 +145,22 @@ cd exports && gitbook pdf ./ ./compliance.pdf
 # creates the PDF at `exports/compliance.pdf`
 ```
 
+> ![PDF screenshoot](./assets/pdffirstpage.png)
+
+A complete generated PDF is [included here](./assets/example.pdf).
+
 To make a HTML web site version:
 
 ```shell
 cd exports && gitbook serve
 # visit your HTML SSP at http://localhost:4000
 ```
+
+> ![frontpage](./assets/frontpage.png)
+
+and like this on a page for particular control:
+
+> ![detailpage](./assets/detailpage.png)
 
 The steps above are included in the project's `Makefile` so you can reliably run, say:
 
@@ -193,6 +169,34 @@ make clean pdf
 # or
 make clean serve
 ```
+
+hyperGRC Quickstart to Maintain your SSP Control Content in a GUI with Structured Data
+---------------------------------------------------------------------------------------
+
+Clone this repo and clone [hyperGRC](https://github.com/GovReady/hyperGRC).
+
+Then `cd` into `hyperGRC` repository and follow the `README.md` instructions to install the Python packages.
+
+To view Freedonia-Compliance in hyperGRC:
+
+```shell
+python -m hypergrc ../freedonia-compliance/
+```
+_NOTE: Python 3.5 or higher required. Also, your path to freedonia-compliance repo may be different._
+
+Visit your OpenControl repo in a GUI at `http://localhost:8000`
+
+See a list of components:
+
+> ![components](./assets/freedonia-hgrc-01.png)
+
+View controls associated with a component:
+
+> ![component-controls](./assets/freedonia-hgrc-02.png)
+
+View control assembled from components:
+
+> ![control](./assets/freedonia-hgrc-03.png)
 
 Review
 -------
@@ -216,5 +220,4 @@ You could use this repo as a kind of stub file for your own compliance documenta
 Feedback
 --------
 
-Please open issues at the [ATO1Day
-Project](https://github.com/opencontrol/ato1day-compliance/issues), instead of within this repository.
+Please [open an issue](https://github.com/opencontrol/freedonia-compliance/issues) as needed.

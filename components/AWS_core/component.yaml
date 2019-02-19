@@ -1,0 +1,16 @@
+documentation_complete: false
+name: AWS Core
+schema_version: 3.0.0
+satisfies:
+- control_key: PE-2
+  standard_key: FRIST-800-53
+  covered_by: []
+  control_origin: inherited
+  implementation_status: complete
+  narrative:
+    - text: |
+        PE-2 - Physical Access Authorizations
+
+        This text describes how our organization is meeting the requirements for the
+        PE-2 by dint of inheriting an approved set of Physical Environment controls
+        with our use of AWS east/west or AWS GovCloud.
