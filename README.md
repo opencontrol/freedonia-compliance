@@ -95,7 +95,7 @@ It just so happens you can get these files and file tree structure by cloning th
 
 Notice one file in particular, the `opencontrol.yaml` file in the root directory of the tree. The `opencontrol.yaml` file is key to using OpenControl.
 
-OpenControl uses a config file called `opencontrol.yaml` following the popular configuration file pattern we see with so many tools today. Every OpenControl repository will have at least one `opencontrol.yaml` file providing critical informatoin and, importantly, information about dependencies on other other OpenControl YAML files and repos.
+OpenControl uses a config file called `opencontrol.yaml` following the popular configuration file pattern we see with so many tools today. Every OpenControl repository will have at least one `opencontrol.yaml` file providing critical information and, importantly, information about dependencies on other other OpenControl YAML files and repos.
 
 Here's what the `opencontrol.yaml` file for our Freedonia project looks like:
 
